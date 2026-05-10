@@ -1,0 +1,9 @@
+use_default_settings: true
+server:
+  port: 8080
+  bind_address: "0.0.0.0"
+  secret_key: "random_string_for_testing" # Generate with: openssl rand -hex 32
+search:
+  formats:
+    - html
+    - json # Useful if you're using this with LLMs/Open WebUI
