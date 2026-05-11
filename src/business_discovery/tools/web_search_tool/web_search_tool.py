@@ -25,7 +25,18 @@ def searxng_web_search(searchStr: str):
             }
         )
 
-    return {"search_results": extracted_data}
+    return extracted_data
+
+
+if __name__ == "__main__":
+    list1 = searxng_web_search.invoke({"searchStr": "playwright"})
+    list2 = searxng_web_search.invoke({"searchStr": "intellij"})
+
+    finalList = list1 + list2
+
+    for item in finalList:
+        print(f"""{item["url"]} --> {item["title"]}""")
+
 
 
 

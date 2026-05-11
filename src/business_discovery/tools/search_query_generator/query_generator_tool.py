@@ -4,6 +4,8 @@ from pydantic import BaseModel
 import copy
 
 from src.business_discovery.agents.llm_agents import chatOllamaMistral, chatOllamaGemma
+from src.business_discovery.prompts.search_query_genarator import search_query_prompt
+
 
 class search_query_response_format(BaseModel):
     search_query: list[str]
@@ -16,10 +18,7 @@ def search_engine_query_generator(user_query:str):
     :param user_query:
     :return:
     """
-    system_prompt  = SystemMessage(content=f"""
-    return list of search queries covering different aspect business discovery for user provided query.
-    Always keep marker like business, organisation, location in query for better results.
-    """)
+    system_prompt  = SystemMessage(content=search_query_prompt)
 
     human_message = HumanMessage(content=f"""{user_query}""")
 
@@ -30,5 +29,5 @@ def search_engine_query_generator(user_query:str):
 
 
 if __name__ == "__main__":
-    res = search_engine_query_generator.invoke({"user_query":"user onboarding east west bank, Philippines"})
+    res = search_engine_query_generator.invoke({"user_query":"user onboarding for saving account east west bank, Philippines"})
     print(res)
