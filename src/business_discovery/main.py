@@ -10,3 +10,6 @@ env_path = Path.cwd().parent.parent.joinpath("env").joinpath(".env")
 log_errors(f"Environment FilePath {env_path}")
 load_dotenv(override=True, dotenv_path=env_path)
 
+print(os.getenv("APP_NAME"))
+
+print(searxng_web_search.invoke({"searchStr" : "playwright"}))
