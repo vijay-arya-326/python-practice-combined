@@ -86,7 +86,7 @@ try:
     # -----------------------------
     demo = grd.ChatInterface(
         fn=chat,
-        title="Business Discovery & Business Rules"
+        title="Business Discovery & Business Rules",
     )
 
     if __name__ == "__main__":
