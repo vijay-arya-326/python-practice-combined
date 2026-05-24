@@ -33,6 +33,7 @@ from src.business_discovery.agents.scope_check_agent import (
 from src.business_discovery.states.business_discovery_agent_state import BusinessDiscoveryAgentState
 
 env_path = Path.cwd().joinpath("env").joinpath(".env")
+
 print(f"Environment FilePath {env_path}")
 load_dotenv(override=True, dotenv_path=env_path)
 
@@ -86,7 +87,7 @@ try:
     # -----------------------------
     demo = grd.ChatInterface(
         fn=chat,
-        title="Business Discovery & Business Rules",
+        title="Business Discovery & Business Rules"
     )
 
     if __name__ == "__main__":
