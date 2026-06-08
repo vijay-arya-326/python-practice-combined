@@ -1,8 +1,8 @@
 ###
-GET http://127.0.0.1:8000/api/v1/chat-with-api
-
-Content-Type: text/event-stream
-Cache-Control: no-cache
+GET http://127.0.0.1:8000/api/v1/chat-with-api?que=What%20is%20the%20capital%20of%20France
+Content-Type: application/json
 Accept: text/event-stream
-X-Accel-Buffering:no
+Cache-Control: no-cache
+X-Accel-Buffering: no
 Connection: keep-alive
+
