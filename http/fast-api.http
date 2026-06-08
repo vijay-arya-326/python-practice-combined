@@ -1,0 +1,8 @@
+###
+GET http://127.0.0.1:8000/api/v1/chat-with-api
+
+Content-Type: text/event-stream
+Cache-Control: no-cache
+Accept: text/event-stream
+X-Accel-Buffering:no
+Connection: keep-alive
