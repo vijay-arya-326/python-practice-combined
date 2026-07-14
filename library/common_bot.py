@@ -117,5 +117,12 @@ def extract_links_from_website(url: str) -> dict:
     except Exception as e:
         return _create_error_response(url, f"Unexpected error: {e}", 'links')
 
+
 def dump_as_json(data):
     return json.dumps(data, indent= 4)
+
+
+def get_properties(object):
+    for p in dir(object):
+        if not p.startswith("_"):
+            print(p, type(p))
